@@ -1,0 +1,23 @@
+import { length } from './strings.js';
+
+const addDigits = (num) => {
+   const iter = (sum) => {
+    if (length(String(sum)) === 1) {
+      return sum;
+    } 
+    return iter (sumNum (sum));
+  };
+  return iter (num);
+};
+
+const sumNum = (counter) => {
+  let sum = 0;
+  for (let i = 0; i <= length(String(counter)) - 1; i += 1) {
+    let char = String(counter)[i];
+    sum = sum + Number(char);
+  }
+  return sum;
+};
+
+
+export default addDigits;
